@@ -254,8 +254,11 @@ function spawnEnemies()
 
 let animationId;
 let score = 0;
+let frames = 0;
 function animate(){
     animationId = requestAnimationFrame(animate);
+    
+    frames++;
     
     //This is what makes the screen canvas get black, and the blur things in the ball particle  
     c.fillStyle = 'rgba(0,0,0,0.1)'; 
@@ -410,6 +413,9 @@ addEventListener('click', (event) =>
 startGameBtn.addEventListener('click', () =>{
     init();
     animate();
-    spawnEnemies();
     modalEl.style.display = 'none';
 });
+
+if(frames % 60 == 0){
+    spawnEnemies();
+}
