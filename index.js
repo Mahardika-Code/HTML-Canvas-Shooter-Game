@@ -19,7 +19,15 @@ const modalEl = document.querySelector('#modal-El')
 //Score Inside A Modal
 const bigScoreEl = document.querySelector('#bigScoreEl') 
 
+/*
+*
+* When The Browser Screen Is Resize, The canvas.height or width Is Rezise Too
+*/
+addEventListener('resize', () => {
+    canvas.width = innerWidth
+    canvas.height = innerHeight
 
+});
 
 
 
